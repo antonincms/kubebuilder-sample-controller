@@ -29,7 +29,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	mygroupv1beta1 "jetstack.io/example-controller/api/v1beta1"
+	mygroupv1beta1 "jetstack.io/example-controller/apis/mygroup/v1beta1"
 )
 
 // MyKindReconciler reconciles a MyKind object

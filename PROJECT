@@ -1,5 +1,6 @@
-version: "2"
 domain: k8s.io
+layout: go.kubebuilder.io/v2
+multigroup: true
 repo: jetstack.io/example-controller
 resources:
 - group: mygroup

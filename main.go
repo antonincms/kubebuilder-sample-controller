@@ -20,8 +20,8 @@ import (
 	"flag"
 	"os"
 
-	mygroupv1beta1 "jetstack.io/example-controller/api/v1beta1"
-	"jetstack.io/example-controller/controllers"
+	mygroupv1beta1 "jetstack.io/example-controller/apis/mygroup/v1beta1"
+	mygroupcontroller "jetstack.io/example-controller/controllers/mygroup"
 	"k8s.io/apimachinery/pkg/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
@@ -62,7 +62,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&controllers.MyKindReconciler{
+	if err = (&mygroupcontroller.MyKindReconciler{
 		Client:   mgr.GetClient(),
 		Log:      ctrl.Log.WithName("controllers").WithName("MyKind"),
 		Recorder: mgr.GetEventRecorderFor("mykind-controller"),

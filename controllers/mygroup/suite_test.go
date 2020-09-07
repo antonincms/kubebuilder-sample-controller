@@ -38,7 +38,7 @@ import (
 
 	// +kubebuilder:scaffold:imports
 
-	mygroupv1beta1 "jetstack.io/example-controller/api/v1beta1"
+	mygroupv1beta1 "jetstack.io/example-controller/apis/mygroup/v1beta1"
 )
 
 // These tests use Ginkgo (BDD-style Go testing framework). Refer to

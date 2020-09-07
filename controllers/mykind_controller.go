@@ -195,7 +195,8 @@ var (
 )
 
 func (r *MyKindReconciler) SetupWithManager(mgr ctrl.Manager) error {
-	if err := mgr.GetFieldIndexer().IndexField(&apps.Deployment{}, deploymentOwnerKey, func(rawObj runtime.Object) []string {
+	ctx := context.TODO()
+	if err := mgr.GetFieldIndexer().IndexField(ctx, &apps.Deployment{}, deploymentOwnerKey, func(rawObj runtime.Object) []string {
 		// grab the Deployment object, extract the owner...
 		depl := rawObj.(*apps.Deployment)
 		owner := metav1.GetControllerOf(depl)
